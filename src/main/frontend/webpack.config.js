@@ -14,14 +14,16 @@ module.exports = {
                 test: /\.css$/,
                 loader: "style!css"
             },
+
             {
-                test: /\.jsx?$/,
+                test: /\.js$/,
+                exclude: /node_modules/,
                 include: [
                     path.resolve(__dirname, "./src")
                 ],
-                loader: 'babel',
-                query: {
-                    presets: ['es2015', 'react']
+                loader: 'babel-loader',
+                query:{
+                  presets: ['react', 'es2015']
                 }
             },
             {
@@ -31,6 +33,10 @@ module.exports = {
             {
                 test: /\.less$/,
                 loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
+            },
+            {
+                test: /\.sass$/,
+                loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader")
             }
         ]
     },
