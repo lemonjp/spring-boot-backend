@@ -16,7 +16,7 @@ module.exports = {
             },
 
             {
-                test: /\.js$/,
+                test: /\.js[x]?$/,
                 exclude: /node_modules/,
                 include: [
                     path.resolve(__dirname, "./src")

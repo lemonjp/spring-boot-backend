@@ -10,8 +10,8 @@ import {deepOrange500} from 'material-ui/styles/colors';
 
 import Header from './Header';
 
+require('!style!css!less!../style/normalize.less');
 require('!style!css!less!../style/Application.less');
-//require("!style!css!sass!../style/common.sass");
 
 const styles = {
   container: {
