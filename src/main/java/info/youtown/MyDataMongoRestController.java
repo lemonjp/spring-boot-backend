@@ -16,12 +16,12 @@ public class MyDataMongoRestController {
     @Autowired
     MyDataMongoRepository repository;
 
-    @RequestMapping(value = "/api", method = RequestMethod.GET)
+    @RequestMapping(value = "/api/v1/users", method = RequestMethod.GET)
     public List<MyDataMongo> restAll() {
         return repository.findAll();
     }
 
-    @RequestMapping(value = "/api/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/api/vi/users/{id}", method = RequestMethod.GET)
     public MyDataMongo restBy(@PathVariable String id) {
         return repository.findById(id);
     }
