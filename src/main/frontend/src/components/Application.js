@@ -1,6 +1,4 @@
 import React, {Component, PropTypes} from "react"
-import $ from 'jquery';
-import { Grid, Row, Col, Button } from 'react-bootstrap';
 import { RouteHandler } from 'react-router';
 import { Link } from "react-router";
 import {AppBar, Drawer, LeftNav, MenuItem, Mixins, MuiThemeProvider} from 'material-ui';

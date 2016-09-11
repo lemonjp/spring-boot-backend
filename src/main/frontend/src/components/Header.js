@@ -20,6 +20,10 @@ export default class Header extends React.Component {
         })
     }
 
+    handleClose() {
+        this.setState({open: false});
+    }
+
     render() {
         return (
             <div>
@@ -27,7 +31,10 @@ export default class Header extends React.Component {
                     title="Title"
                     onLeftIconButtonTouchTap={this.toggleDrawer.bind(this)}
                 />
-                <DrawerLeft open={this.state.open} onToggleDrawer={this.toggleDrawer.bind(this)} />
+                <DrawerLeft
+                    open={this.state.open}
+                    onToggleDrawer={this.toggleDrawer.bind(this)}
+                    onHandleClose={this.handleClose.bind(this)} />
            </div>
         )
     }

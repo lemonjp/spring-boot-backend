@@ -1,7 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
 import axios from 'axios'
-//import { Row, Col, Button } from 'react-bootstrap';
 import { Link } from "react-router";
 import {
   Paper,
@@ -9,6 +8,13 @@ import {
 } from "material-ui"
 
 import UserList from './UserList';
+
+const style = {
+  height: 300,
+  margin: 20,
+  textAlign: 'center',
+  display: 'inline-block',
+};
 
 export class Users extends React.Component {
     constructor(props) {
@@ -23,17 +29,16 @@ export class Users extends React.Component {
           console.log(response)
         })
     }
+
     render() {
         return (
-            <div className="contents">
-              <Paper className="paper">
+              <Paper style={style} zDepth={2}>
                 <h2>Users</h2>
                 <p>Usersのコンテンツが入ります。</p>
                 <UserList users={this.state.users}/>
                 <FlatButton label="Go Home"
                             containerElement={<Link to="/" />} />
               </Paper>
-            </div>
         )
     }
 }

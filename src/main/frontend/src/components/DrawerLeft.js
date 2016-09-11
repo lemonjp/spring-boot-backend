@@ -6,37 +6,23 @@ import { Link } from "react-router";
 
 export default class DrawerLeft extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {open: false};
-    }
-
-    handleToggle() {
-        this.setState({open: !this.state.open});
-    }
-
-    handleClose() {
-        this.setState({open: false});
-    }
-
     render() {
         return (
             <div>
                 <RaisedButton
                     label="Open Drawer"
-                    onTouchTap={this.handleToggle.bind(this)}
                 />
                 <Drawer
                     docked={false}
                     width={200}
-                    open={this.state.open}
-                    onRequestChange={(open) => this.setState({open})}
+                    open={this.props.open}
+                    onRequestClose={this.props.onToggleDrawer}
                 >
                     <Link to="/">
-                        <MenuItem onTouchTap={this.handleClose.bind(this)}>Home</MenuItem>
+                        <MenuItem onTouchTap={this.props.onHandleClose}>Home</MenuItem>
                     </Link>
                     <Link to="/users">
-                        <MenuItem onTouchTap={this.handleClose.bind(this)}>Users</MenuItem>
+                        <MenuItem onTouchTap={this.props.onHandleClose}>Users</MenuItem>
                     </Link>
                 </Drawer>
             </div>
